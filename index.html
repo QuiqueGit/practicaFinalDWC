@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clientes</title>
+	<!-- Responsive meta tag -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- jQueryUI -->
+	<link rel="stylesheet" href="lib/jquery-ui-1.12.1/jquery-ui.css">
+	<!-- CSS BOOTSTRAP 4 BETA-->
+	<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<!-- FONT AWESOME 5.0 -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<!-- <script type="text/javascript" src="lib/fontawesome-all.js"></script> -->
+	<!-- HANDLEBARS JS -->
+	<script type="text/javascript" src="lib/handlebars.runtime-v4.0.11.js"></script>
+	<script type="text/javascript" src="js/clienteListCompiled.js"></script>
+	<script type="text/javascript" src="js/modalCompiled.js"></script>
+</head>
+<body>
+	<div class="container"></div>
+
+		<h1 class="display-4 text-center">Gestión tabla Clientes</h1>		
+		<!-- div para el modal -->
+		<div class="divModal"></div>
+		
+		<!-- div para la tabla + boton nuevo -->
+		<div class="container tabla">
+			
+			<i id='nuevo' class='fa fa-plus-circle fa-2x' data-toggle='modal' data-target='#clienteModal' style='color:green'></i>
+			<!-- div para la tabla -->
+			<div class="content mt-3"></div>
+
+		</div>
+
+	</div>
+
+
+	<!-- SCRIPTS jQuery, Bootstrap4 -->
+	<script type="text/javascript" src="lib/jquery_3.3.1.js"></script>
+	<script type="text/javascript" src="lib/jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="lib/bootstrap.bundle.min.js"></script>
+
+	<script type="text/javascript" src="js/pubsub.js"></script>	
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/clienteList.js"></script>
+	<script type="text/javascript" src="js/clienteListView.js"></script>
+	<script type="text/javascript" src="js/cliente.js"></script>
+	<script type="text/javascript" src="js/clienteView.js"></script>			
+</body>
+</html>

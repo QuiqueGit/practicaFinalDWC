@@ -1,0 +1,31 @@
+<!-- Tabla -->
+<table id="tabla" class="table table-hover mt-2">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Teléfono</th>
+      <th scope="col">FechaNacimiento</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>	
+
+  	{{#each this}}
+
+  	<tr id="{{id}}">  	
+  		<td class="nombre">{{nombre}}</td>
+  		<td class="ciudad">{{ciudad}}</td>
+  		<td class="sexo">{{sexo}}</td>
+  		<td class="telefono">{{telefono}}</td>
+  		<td class="fnac">{{formatDate fecha_nacimiento}}</td>
+  		<td><i id='editar' class='fa fa-pencil fa-2x icono' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></td>
+  		<td><i id='borrar' class='fa fa-trash fa-2x icono' style='color:red'></i></td>
+  	</tr> 
+
+	{{/each}}	 
+
+  </tbody>
+</table>
