@@ -1,5 +1,5 @@
-<!-- Tabla -->
-<table id="tabla" class="table table-hover mt-2">
+<!-- TABLA -->
+<table id="tabla" class="table table-hover mt-2 d-none d-lg-table">
   <thead>
     <tr>
       <th scope="col">Nombre</th>
@@ -21,11 +21,33 @@
   		<td class="sexo">{{sexo}}</td>
   		<td class="telefono">{{telefono}}</td>
   		<td class="fnac">{{formatDate fecha_nacimiento}}</td>
-  		<td><i id='editar' class='fa fa-pencil fa-2x icono' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></td>
-  		<td><i id='borrar' class='fa fa-trash fa-2x icono' style='color:red'></i></td>
+  		<td><i id='editar'><i class='fas fa-edit fa-2x icono mr-2' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i></td>
+  		<td><i id='borrar'><i class='fas fa-trash-alt fa-2x icono ml-2' style='color:red'></i></i></td>
   	</tr> 
 
 	{{/each}}	 
 
   </tbody>
 </table>
+
+<!-- CARDS -->
+<div class="container d-lg-none">
+
+  {{#each this}}
+
+    <row>    
+        <div class="col-12 container card mb-2">
+          <div id="{{id}}" class="card-body text-center">
+            <h5>{{nombre}}</h5>
+            <p>{{ciudad}}</p>
+            <p>{{telefono}}</p>
+            <p>{{formatDate fecha_nacimiento}}</p>
+            <i id='editar'><i class='fas fa-edit fa-2x icono mr-2' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i>
+            <i id='borrar'><i class='fas fa-trash-alt fa-2x icono ml-2' style='color:red'></i></i>
+          </div>
+        </div>
+    </row>
+
+  {{/each}}
+
+</div>
