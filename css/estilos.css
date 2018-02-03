@@ -5,3 +5,10 @@
 .card hr{
 	background-color: #343A40;
 }
+
+/*Mapa de Google*/
+#contMapa {
+	height: 500px;
+    width: 100%;
+}
+/****************/

@@ -23,12 +23,11 @@ var ClienteListView = (function() {
 		$('div.content').html("ERROR. COMPROBAR CONEXION");
 	}
 
-
-
 	return {
 		init: function(){			
 			events.subscribe("consultar", consultar);
 			events.subscribe("error", error);
+			
 		},
 		fechaES_a_fechaUS: fechaES_a_fechaUS
 	}
@@ -122,4 +121,34 @@ $("div.content").on('click','i#borrar',function(){
 		events.publish('borrarCliente', cliente);
 	}	
 
+});
+
+
+//evento click icono MAPA en Tabla Clientes
+$("div.content").on('click','i#mapa_icon',function(){	
+
+	var ruta;
+	var direccion;
+	var ciudad;
+
+	if($("#tabla").is(":visible")) {		
+		//recorrer los td del tr más cercano al icono editar, cogiendo sus valores con html()
+		$(this).closest('tr').each(function() {
+
+			direccion = $(this).find(".direccion").html();
+		    ciudad = $(this).find(".ciudad").html(); 		 
+		 });
+
+	}else{			
+		var indice = $(this).parent().attr('id');
+		//Buscamos en los tr de la tabla oculta, la id capturada
+		var tr = $('tr#'+indice);
+		//Ahora sólo queda asignar a variables, los valores de los td, construir un objeto plano, y enviarlo por el publish a renderizar el edit
+		direccion = $(tr).find(".direccion").html();
+	    ciudad = $(tr).find(".ciudad").html(); 	  	    
+	}
+
+	ruta = direccion+","+ciudad;
+
+	events.publish('getCoords', ruta);
 });

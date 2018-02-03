@@ -1,3 +1,4 @@
+//API key google geocoding: AIzaSyASDlevRW_kRdL93hcBUcGskqyVBfKT9Rc
 //URL de la API
 var App = (function() {
 
@@ -18,5 +19,3 @@ Handlebars.registerHelper("formatDate", function(stringDate){
 
 	return dia + "/" + mes + "/" + year;
 });
-
-
