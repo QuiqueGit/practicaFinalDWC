@@ -1,4 +1,4 @@
-var Cliente = (function () {
+var Cliente = (function() {
 
 	var crearCliente = function(object){
 
@@ -9,6 +9,9 @@ var Cliente = (function () {
 			sexo: object.sexo,
 			telefono: object.telefono,
 			fecha_nacimiento: object.fechaNacimiento
+			direccion: object.direccion,
+			provincia: object.provincia,
+			fechaAlta: object.fechaAlta
 		}
 	}
 

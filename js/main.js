@@ -1,7 +1,7 @@
 //URL de la API
 var App = (function() {
 
-	var url = "http://localhost/API/";
+	var url = "http://localhost/practicaFinalDWC/API/";
 
 	return{
 		url: url
