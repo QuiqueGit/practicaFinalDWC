@@ -45,7 +45,7 @@ ClienteList.consultarClientes();
 //evento icono de AÑADIR cliente
 $("i#nuevo").click(function(){
 
-	var clienteVacio = {id:"",nombre:"",ciudad:"",sexo:"",telefono:"",fecha_nacimiento:""}
+	var clienteVacio = {id:"",nombre:"",ciudad:"",sexo:"",telefono:"",fecha_nacimiento:"",direccion:"",provincia:""}
 
 	events.publish('renderModal', clienteVacio);	
 });
@@ -71,9 +71,12 @@ $("div.content").on('click','i#editar', function(){
 		    //para la fecha necesito cambiar el formato de entrada en la base de datos a yyyy-mm-dd, entonces creo una función que pasa de formato
 		    // 02/12/2015 a 2015-12-02, para así asegurarme de tener el formato correcto, cambie de fecha o no al actualizar
 		    var fnac = ClienteListView.fechaES_a_fechaUS($(this).find(".fnac").html());
+		    var direccion = $(this).find(".direccion").html();
+		    var provincia = $(this).find(".provincia").html();
+		    var fechaAlta = ClienteListView.fechaES_a_fechaUS($(this).find(".fechaAlta").html());
 
 		    //objeto plano con los datos obtenidos
-			cliente = {id:id,nombre:nombre,ciudad:ciudad,sexo:sexo,telefono:telefono,fecha_nacimiento:fnac};
+			cliente = {id:id,nombre:nombre,ciudad:ciudad,sexo:sexo,telefono:telefono,fecha_nacimiento:fnac,direccion:direccion,provincia:provincia,fechaAlta:fechaAlta};
 		 });
 
 		events.publish('renderModal', cliente);
@@ -91,8 +94,11 @@ $("div.content").on('click','i#editar', function(){
 	    var sexo = $(tr).find(".sexo").html(); 
 	    var telefono = $(tr).find(".telefono").html(); 
 	    var fnac = ClienteListView.fechaES_a_fechaUS($(tr).find(".fnac").html());
+	    var direccion = $(tr).find(".direccion").html();
+	    var provincia = $(tr).find(".provincia").html();
+	    var fechaAlta = ClienteListView.fechaES_a_fechaUS($(tr).find(".fechaAlta").html());
 
-	    cliente = {id:id,nombre:nombre,ciudad:ciudad,sexo:sexo,telefono:telefono,fecha_nacimiento:fnac};
+	    cliente = {id:id,nombre:nombre,ciudad:ciudad,sexo:sexo,telefono:telefono,fecha_nacimiento:fnac,direccion:direccion,provincia:provincia,fechaAlta:fechaAlta};
 
 	    events.publish('renderModal', cliente);
 	}

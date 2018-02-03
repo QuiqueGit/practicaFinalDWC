@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 	$cliente->fechaNacimiento = htmlspecialchars(trim($_POST['fechaNacimiento']));
 	$cliente->direccion = htmlspecialchars(trim($_POST['direccion']));
 	$cliente->provincia = htmlspecialchars(trim($_POST['provincia']));
-	//$cliente->fechaAlta = htmlspecialchars(trim($_POST['fechaAlta']));
+	$cliente->fechaAlta = htmlspecialchars(trim($_POST['fechaAlta']));
 	//start new transaction
 	$transaction = new Transaction();
 	//obtain clienteDAOFactory

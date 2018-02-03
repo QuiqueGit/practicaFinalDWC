@@ -16,37 +16,49 @@
                         <input type="text" class="form-control" id="nombre_input" value="{{cliente.nombre}}" required>
                     </div>
                     <div class="form-group">
-                        <label>Ciudad</label>
-                        <input type="text" class="form-control text-muted" id="ciudad_input" value="{{cliente.ciudad}}" required>
-                    </div>
-                    <div class="form-group">
-                        <small>Sexo</small>
-                        <br>
-                        {{#if sexo}}
-                            <input type="radio" name="sexo" value="H" checked> Hombre<br>
-                            <input type="radio" name="sexo" value="M"> Mujer
-                        {{else}}
-                            <input type="radio" name="sexo" value="H"> Hombre<br>
-                            <input type="radio" name="sexo" value="M" checked> Mujer                        
-                        {{/if}} 
-                        <br>
-                    </div>
-                    <div class="form-group">
-                        <label>Teléfono</label>
-                        <input type="text" class="form-control" id="telefono_input" value="{{cliente.telefono}}" required>
-                    </div>
+                        <label>Dirección</label>
+                        <input type="text" class="form-control text-muted" id="direccion_input" value="{{cliente.direccion}}" required>
+                    </div> 
+                    <row class='no-gutters d-flex'>                   
+                        <div class="form-group col-6">
+                            <label>Ciudad</label>
+                            <input type="text" class="form-control text-muted" id="ciudad_input" value="{{cliente.ciudad}}" required>
+                        </div>
+                        <div class="form-group col-5 offset-1">
+                            <label>Provincia</label>
+                            <input type="text" class="form-control text-muted" id="provincia_input" value="{{cliente.provincia}}" required>
+                        </div> 
+                    </row>
+
+                    <row class='no-gutters d-flex'>
+                        <div class="form-group col-3">
+                            <small>Sexo</small>
+                            <br>
+                            {{#if sexo}}
+                                <input type="radio" name="sexo" value="H" checked> Hombre<br>
+                                <input type="radio" name="sexo" value="M"> Mujer
+                            {{else}}
+                                <input type="radio" name="sexo" value="H"> Hombre<br>
+                                <input type="radio" name="sexo" value="M" checked> Mujer                        
+                            {{/if}} 
+                            <br>
+                        </div>
+                        <div class="form-group col-5 offset-4">
+                            <label>Teléfono</label>
+                            <input type="text" class="form-control" id="telefono_input" value="{{cliente.telefono}}" required>
+                        </div>
+                    </row>
+                    
                     <div class="form-group">
                         <label>FechaNacimiento</label>
-                        <input type="text" id="datepicker" class="form-control" value="{{cliente.fecha_nacimiento}}" required>
-                    </div>
+                        <input type="text" class="form-control datepicker" value="{{cliente.fecha_nacimiento}}" required>
+                    </div>                     
+                    {{#if fechaAlta}}
                     <div class="form-group">
-                        <label>Dirección</label>
-                        <input type="text" class="form-control text-muted" id="direccion_input" value="{{cliente.ciudad}}" required>
+                        <label>FechaAlta</label>
+                        <input type="text" id="fechaAlta_input" class="form-control datepicker" value="{{cliente.fechaAlta}}" required>
                     </div>
-                    <div class="form-group">
-                        <label>Provincia</label>
-                        <input type="text" class="form-control text-muted" id="provincia_input" value="{{cliente.ciudad}}" required>
-                    </div>                    
+                    {{/if}}            
                     <div class="form-group">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                         <button type="button" class="btn btn-info" id="boton_{{accion}}" data-id='{{cliente.id}}' data-dismiss="modal">{{accion}}</button>

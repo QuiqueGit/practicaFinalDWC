@@ -27,10 +27,9 @@ var ClienteView = (function () {
 		var ciudad = $('#ciudad_input').val();
 		var sexo = $('input[name=sexo]:checked', '#form_registro').val();
 		var telefono = $('#telefono_input').val();
-		var fecha_nacimiento = $('#datepicker').val();
+		var fecha_nacimiento = $('.datepicker').val();
 		var direccion = $('#direccion_input').val();
-		var provincia = $('#provincia_input').val();
-		var fechaAlta = fechaActual();
+		var provincia = $('#provincia_input').val();		
 
 		return {
 			nombres: nombre,
@@ -39,8 +38,7 @@ var ClienteView = (function () {
 			telefono: telefono,
 			fechaNacimiento: fecha_nacimiento,
 			direccion: direccion,
-			provincia: provincia,
-			fechaAlta: fechaAlta
+			provincia: provincia
 		}
 	}
 
@@ -54,20 +52,21 @@ var ClienteView = (function () {
 		var parametros;
 
 		cliente.id != 0 ?
-		parametros = {sexo:male, titulo:"Editar datos", accion: "Editar", cliente: cliente}: parametros = {titulo:"Nuevo Cliente", accion: "Registrar", cliente: cliente}		
+		parametros = {fechaAlta:true,sexo:male, titulo:"Editar datos", accion: "Editar", cliente: cliente}: parametros = {titulo:"Nuevo Cliente", accion: "Registrar", cliente: cliente}		
 
 		var modalNuevoCompiled = Handlebars.templates.modal(parametros);
 
 		$('div.divModal').html(modalNuevoCompiled);
 
-		$('#datepicker').datepicker({dateFormat: 'yy-mm-dd', changeYear: true, changeMonth: true, yearRange: "1940:2000"});
+		$('.datepicker').datepicker({dateFormat: 'yy-mm-dd', changeYear: true, changeMonth: true, yearRange: "1940:2000"});
 	}
 
 	return {
 		init: function(){			
 			events.subscribe("renderModal", renderModal);
 		},
-		capturarDatos: capturarDatos
+		capturarDatos: capturarDatos,
+		fechaActual: fechaActual 
 	}
 	
 })();
@@ -83,6 +82,8 @@ $("div.divModal").on('click', 'button#boton_Registrar', function(){
 	if ($('#nombre_input').val() !== "" && $('#ciudad_input').val() !== "" && $('#telefono_input').val() !== "" && $('#datepicker').val() !== ""){
 
 		var cliente = ClienteView.capturarDatos();
+		//añadimos al objeto el atributo fechaAlta, con la fecha actual
+		cliente.fechaAlta = ClienteView.fechaActual();
 
 		events.publish("nuevoCliente", cliente);			
 	}
@@ -100,6 +101,7 @@ $("div.divModal").on('click', 'button#boton_Editar', function(){
 
 		var cliente = ClienteView.capturarDatos();
 		cliente.id = id;
+		cliente.fechaAlta = $('#fechaAlta_input').val();
 
 		events.publish("editarCliente", cliente);			
 	}

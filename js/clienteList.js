@@ -32,16 +32,16 @@ var ClienteList = (function () {
 			 
 				var cliente = Cliente.crearCliente(data[i]);
 
-				array_clientes.push(cliente);
-
-				events.publish("consultar", array_clientes);
+				array_clientes.push(cliente);				
 			}	
+
+			events.publish("consultar", array_clientes);
 
 		},"json").fail(function() {
 
 		    events.publish("error");	 
 		  });
-				
+		  				
 	}
 
 	var nuevoCliente = function(objetoCliente){

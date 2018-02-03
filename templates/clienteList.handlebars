@@ -6,10 +6,10 @@
       <th scope="col">Ciudad</th>
       <th scope="col">Sexo</th>
       <th scope="col">Teléfono</th>
-      <th scope="col">FechaNacimiento</th>
+      <th scope="col">F.Nacimiento</th>
       <th scope="col">Dirección</th>
       <th scope="col">Provincia</th>
-      <th scope="col">FechaAlta</th>
+      <th scope="col">F.Alta</th>
       <th></th>
       <th></th>
     </tr>
@@ -26,7 +26,7 @@
   		<td class="fnac">{{formatDate fecha_nacimiento}}</td>
       <td class="direccion">{{direccion}}</td>
       <td class="provincia">{{provincia}}</td>
-      <td class="fAlta">{{formatDate fechaAlta}}</td>
+      <td class="fechaAlta">{{formatDate fechaAlta}}</td>
   		<td><i id='editar'><i class='fas fa-edit fa-2x icono mr-2' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i></td>
   		<td><i id='borrar'><i class='fas fa-trash-alt fa-2x icono ml-2' style='color:red'></i></i></td>
   	</tr> 
@@ -42,15 +42,14 @@
   {{#each this}}
 
     <row>    
-        <div class="col-12 container card mb-2">
+        <div class="col-12 container card border-dark mb-2">
           <div id="{{id}}" class="card-body text-center">
             <h5>{{nombre}}</h5>
-            <p>{{ciudad}}</p>
+            <p>{{direccion}}, {{ciudad}}</p>
             <p>{{telefono}}</p>
             <p>{{formatDate fecha_nacimiento}}</p>
-            <p>{{direccion}}</p>
-            <p>{{provincia}}</p>
-            <p>{{fechaAlta}}</p>
+            <hr>
+            <p>Fecha de alta: {{formatDate fechaAlta}}</p>
             <i id='editar'><i class='fas fa-edit fa-2x icono mr-2' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i>
             <i id='borrar'><i class='fas fa-trash-alt fa-2x icono ml-2' style='color:red'></i></i>
           </div>
