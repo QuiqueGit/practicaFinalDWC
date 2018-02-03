@@ -25,8 +25,6 @@ var ClienteView = (function () {
 
 		cliente.sexo == "H" ? male = true : male = false;
 
-		console.log(male);
-
 		var parametros;
 
 		cliente.id != 0 ?
@@ -53,7 +51,7 @@ ClienteView.init();
 //***EVENTOS***//
 
 //evento click botón REGISTRAR en Modal Nuevo Cliente, con id='boton_Registrar'
-$("div.divModal").on('click', 'input#boton_Registrar', function(){	
+$("div.divModal").on('click', 'button#boton_Registrar', function(){	
 
 	//comprobar si los input tienen valor, no puede haber ninguno vacío
 	if ($('#nombre_input').val() && $('#ciudad_input').val() && $('#telefono_input').val() && $('#datepicker').val()){
@@ -66,10 +64,10 @@ $("div.divModal").on('click', 'input#boton_Registrar', function(){
 });
 
 //evento click botón EDITAR en Modal Editar, con id='boton_Editar'
-$("div.divModal").on('click', 'input#boton_Editar', function(){
+$("div.divModal").on('click', 'button#boton_Editar', function(){
 
 	//obtener la id del cliente, apuntada en la id del tr, necesaria para la actualizacion
-	var id = $('input#boton_Editar').attr('data-id');
+	var id = $('button#boton_Editar').attr('data-id');
 
 	//comprobar si los input tienen valor, no puede haber ninguno vacío
 	if ($('#nombre_input').val() && $('#ciudad_input').val() && $('#telefono_input').val() && $('#datepicker').val()){

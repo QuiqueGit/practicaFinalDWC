@@ -1,9 +1,9 @@
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['modal'] = template({"1":function(container,depth0,helpers,partials,data) {
-    return "                        <input type=\"radio\" name=\"sexo\" value=\"H\" checked> Hombre<br>\r\n                        <input type=\"radio\" name=\"sexo\" value=\"M\"> Mujer\r\n";
+    return "                            <input type=\"radio\" name=\"sexo\" value=\"H\" checked> Hombre<br>\r\n                            <input type=\"radio\" name=\"sexo\" value=\"M\"> Mujer\r\n";
 },"3":function(container,depth0,helpers,partials,data) {
-    return "                        <input type=\"radio\" name=\"sexo\" value=\"H\"> Hombre<br>\r\n                        <input type=\"radio\" name=\"sexo\" value=\"M\" checked> Mujer                        \r\n";
+    return "                            <input type=\"radio\" name=\"sexo\" value=\"H\"> Hombre<br>\r\n                            <input type=\"radio\" name=\"sexo\" value=\"M\" checked> Mujer                        \r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression, alias5=container.lambda;
 
@@ -19,12 +19,12 @@ templates['modal'] = template({"1":function(container,depth0,helpers,partials,da
     + alias4(alias5(((stack1 = (depth0 != null ? depth0.cliente : depth0)) != null ? stack1.telefono : stack1), depth0))
     + "\" required>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>FechaNacimiento</label>\r\n                        <input type=\"text\" id=\"datepicker\" class=\"form-control\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? depth0.cliente : depth0)) != null ? stack1.fecha_nacimiento : stack1), depth0))
-    + "\" required>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>\r\n                        <input id=\"boton_"
+    + "\" required>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>\r\n                        <button type=\"button\" class=\"btn btn-info\" id=\"boton_"
     + alias4(((helper = (helper = helpers.accion || (depth0 != null ? depth0.accion : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"accion","hash":{},"data":data}) : helper)))
     + "\" data-id='"
     + alias4(alias5(((stack1 = (depth0 != null ? depth0.cliente : depth0)) != null ? stack1.id : stack1), depth0))
-    + "' data-dismiss=\"modal\" type=\"submit\" class=\"btn btn-info\" value=\""
+    + "' data-dismiss=\"modal\">"
     + alias4(((helper = (helper = helpers.accion || (depth0 != null ? depth0.accion : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"accion","hash":{},"data":data}) : helper)))
-    + "\"></input>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+    + "</button>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 },"useData":true});
 })();
