@@ -21,7 +21,7 @@ templates['clienteList'] = template({"1":function(container,depth0,helpers,parti
     + alias4(((helper = (helper = helpers.provincia || (depth0 != null ? depth0.provincia : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"provincia","hash":{},"data":data}) : helper)))
     + "</td>\r\n      <td class=\"fechaAlta\">"
     + alias4((helpers.formatDate || (depth0 && depth0.formatDate) || alias2).call(alias1,(depth0 != null ? depth0.fechaAlta : depth0),{"name":"formatDate","hash":{},"data":data}))
-    + "</td>\r\n  		<td><i id='editar'><i class='fas fa-edit fa-2x icono mr-2' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i></td>\r\n  		<td><i id='borrar'><i class='fas fa-trash-alt fa-2x icono ml-2' style='color:red'></i></i></td>\r\n      <td><i id='mapa_icon'><i class='fas fa-map-marker-alt fa-2x icono ml-2' style='color:blue'></i></i></td>\r\n  	</tr> \r\n\r\n";
+    + "</td>\r\n  		<td><i id='editar'><i class='fas fa-edit fa-2x icono mr-2' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i></td>\r\n  		<td><i id='borrar'><i class='fas fa-trash-alt fa-2x icono ml-2 mr-2' style='color:red'></i></i></td>\r\n      <td><i id='mapa_icon'><i class='fas fa-map-marker-alt fa-2x icono ml-2' style='color:blue'></i></i></td>\r\n  	</tr> \r\n\r\n";
 },"3":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
@@ -39,7 +39,7 @@ templates['clienteList'] = template({"1":function(container,depth0,helpers,parti
     + alias4((helpers.formatDate || (depth0 && depth0.formatDate) || alias2).call(alias1,(depth0 != null ? depth0.fecha_nacimiento : depth0),{"name":"formatDate","hash":{},"data":data}))
     + "</p>\r\n            <hr>\r\n            <p>Fecha de alta: "
     + alias4((helpers.formatDate || (depth0 && depth0.formatDate) || alias2).call(alias1,(depth0 != null ? depth0.fechaAlta : depth0),{"name":"formatDate","hash":{},"data":data}))
-    + "</p>\r\n            <i id='editar'><i class='fas fa-edit fa-2x icono mr-2' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i>\r\n            <i id='borrar'><i class='fas fa-trash-alt fa-2x icono ml-2' style='color:red'></i></i>\r\n            <i id='mapa_icon'><i class='fas fa-map-marker-alt fa-2x icono ml-2' style='color:blue'></i></i>\r\n          </div>\r\n        </div>\r\n    </row>\r\n\r\n";
+    + "</p>\r\n            <i id='editar'><i class='fas fa-edit fa-2x icono mr-2' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i>\r\n            <i id='borrar'><i class='fas fa-trash-alt fa-2x icono ml-2 mr-2' style='color:red'></i></i>\r\n            <i id='mapa_icon'><i class='fas fa-map-marker-alt fa-2x icono ml-2' style='color:blue'></i></i>\r\n          </div>\r\n        </div>\r\n    </row>\r\n\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=depth0 != null ? depth0 : (container.nullContext || {});
 

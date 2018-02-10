@@ -51,8 +51,9 @@ var ClienteView = (function () {
 
 		var parametros;
 
-		cliente.id != 0 ?
-		parametros = {fechaAlta:true,sexo:male, titulo:"Editar datos", accion: "Editar", cliente: cliente}: parametros = {titulo:"Nuevo Cliente", accion: "Registrar", cliente: cliente}		
+		cliente.id != "" ?
+		parametros = {fechaAlta:true,sexo:male, titulo:"Editar datos", accion: "Editar", cliente: cliente}:
+		parametros = {titulo:"Nuevo Cliente", accion: "Registrar", cliente: cliente}		
 
 		var modalNuevoCompiled = Handlebars.templates.modal(parametros);
 
@@ -61,40 +62,10 @@ var ClienteView = (function () {
 		$('.datepicker').datepicker({dateFormat: 'yy-mm-dd', changeYear: true, changeMonth: true, yearRange: "1940:2000"});
 	}
 
-	//funcion para iniciar el mapa de google con los parámetros de lat y lng según cada dirección del cliente
-	function renderMapaModal(coords) {
-
-		var modalMapaCompiled = Handlebars.templates.modalMapa();
-
-		$('#divMapaModal').html(modalMapaCompiled);		
-
-		// solo entrará en la siguiente función, si se ha mostrado el modal del mapa
-		$('#modalMapa').on('shown.bs.modal', function () {
-
-			//coordenadas dinámicas según dirección del cliente...ejemplo: {lat: -25.363, lng: 131.044}
-		  	var uluru = coords; 
-
-		  	//creación del mapa, lo inserto en el div contMapa del modalMapa
-		    var map = new google.maps.Map(document.getElementById('contMapa'), {
-		      zoom: 17,
-		      center: uluru
-		    });
-		    //parámetro para crear la marca en el mapa, en la misma posición de la dirección
-		    var marker = new google.maps.Marker({
-		      position: uluru,
-		      map: map
-		    }); 
-		});		
-
-		// mostrar modal del mapa manualmente, y con el evento anterior, muestra el mapa dentro del modal
-		$('#modalMapa').modal('show');  
-    }
-
 
 	return {
 		init: function(){			
-			events.subscribe("renderModal", renderModal);
-			events.subscribe("renderMapaModal", renderMapaModal);
+			events.subscribe("renderModal", renderModal);			
 		},
 		capturarDatos: capturarDatos,
 		fechaActual: fechaActual 
@@ -102,7 +73,6 @@ var ClienteView = (function () {
 	
 })();
 
-ClienteView.init();
 
 //***EVENTOS***//
 

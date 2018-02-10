@@ -34,10 +34,6 @@ var ClienteListView = (function() {
 	
 })();
 
-ClienteListView.init();
-
-ClienteList.consultarClientes();
-
 
 //***EVENTOS***//
 

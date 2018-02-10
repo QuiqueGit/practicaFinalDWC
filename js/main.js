@@ -1,4 +1,14 @@
-//API key google geocoding: AIzaSyASDlevRW_kRdL93hcBUcGskqyVBfKT9Rc
+//cargar todos los init() e iniciar la consulta de clientes cuando el document esté listo
+$(document).ready(function() {
+	ClienteView.init();
+    ClienteList.init();
+    ClienteListView.init();
+    Mapa.init();
+    MapaView.init();
+    ClienteList.consultarClientes();
+});
+
+
 //URL de la API
 var App = (function() {
 
@@ -16,6 +26,8 @@ Handlebars.registerHelper("formatDate", function(stringDate){
 	var year = stringDate.substring(0,4);
 	var mes = stringDate.substring(5,7);
 	var dia = stringDate.substring(8,10);
+	//otro método con split y join
+	//stringDate.split(' ')[0].split('-').reverse().join('/');
 
 	return dia + "/" + mes + "/" + year;
 });
