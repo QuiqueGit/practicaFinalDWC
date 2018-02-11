@@ -21,7 +21,7 @@ var VehiculoView = (function() {
 	}
 	
 	//funcion para renderizar el modal de los vehiculos del cliente, recibe el array con los vehiculos del cliente pulsado
-	function renderVehiculoModal(array_vehiculos) {		
+	function renderVehiculoModal(array_vehiculos) {	
 
 		var noVehiculos;
 		//la API devuelve la id del cliente sin vehiculos si no tiene, o el array de todos los vehiculos que tiene
@@ -34,8 +34,10 @@ var VehiculoView = (function() {
 		$('#divVehiculo').html(modalVehiculoCompiled);	
 
 		$('.datepicker_vehiculo').datepicker({dateFormat: 'yy-mm-dd', changeYear: true, changeMonth: true, yearRange: "1920:2018"});
-			
-		$('#modalVehiculo').modal('show');	
+
+		$('.modal-backdrop').remove(); //elimina el fondo del anterior modal si hubiese
+
+		$('#modalVehiculo').modal('show');
 
 		/*EVENTOS EDITAR, ACEPTAR Y ELIMINAR VEHICULOS*/
 		if (!array_vehiculos.idSinVehiculo) {

@@ -6,6 +6,10 @@
 	background-color: #343A40;
 }
 
+.borde_vehiculo{
+	background-color: #EDEDED;
+}
+
 /*Mapa de Google*/
 #contMapa {
 	height: 500px;

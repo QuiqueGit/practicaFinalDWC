@@ -13,7 +13,7 @@ templates['vehiculo'] = template({"1":function(container,depth0,helpers,partials
 
   return "	                        <div id=\""
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" class=\"borde_vehiculo p-2 mr-1 border border-secondary\">\r\n	                            <label>Tipo:</label><br>\r\n	                            <select class=\"custom-select selectorr\" id=\"select_vehiculo_uptade"
+    + "\" class=\"borde_vehiculo p-2 mr-1 border border-secondary rounded\">\r\n	                            <label>Tipo:</label><br>\r\n	                            <select class=\"custom-select selectorr\" id=\"select_vehiculo_uptade"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
     + "\" disabled=\"\">                        	\r\n	                                <option value=\"Coche\" "
     + alias4((helpers.equals || (depth0 && depth0.equals) || alias2).call(alias1,(depth0 != null ? depth0.tipo : depth0),"Coche",{"name":"equals","hash":{},"data":data}))

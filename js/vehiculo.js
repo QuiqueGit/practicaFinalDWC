@@ -31,7 +31,9 @@ var Vehiculo = (function() {
 
 		$.post(url + "nuevoVehiculo.php", vehiculo, function(data){
 
-			console.log("Vehiculo creado.");			
+			console.log("Vehiculo creado.");
+				
+			events.publish("getVehiculos",vehiculo.idCliente);		
 
 		}, "json");
 
