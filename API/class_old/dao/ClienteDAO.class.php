@@ -3,7 +3,7 @@
  * Intreface DAO
  *
  * @author: http://phpdao.com
- * @date: 2018-01-17 21:01
+ * @date: 2018-02-03 11:14
  */
 interface ClienteDAO{
 
@@ -61,6 +61,12 @@ interface ClienteDAO{
 
 	public function queryByFechaNacimiento($value);
 
+	public function queryByDireccion($value);
+
+	public function queryByProvincia($value);
+
+	public function queryByFechaAlta($value);
+
 
 	public function deleteByNombres($value);
 
@@ -71,6 +77,12 @@ interface ClienteDAO{
 	public function deleteByTelefono($value);
 
 	public function deleteByFechaNacimiento($value);
+
+	public function deleteByDireccion($value);
+
+	public function deleteByProvincia($value);
+
+	public function deleteByFechaAlta($value);
 
 
 }

@@ -13,6 +13,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>	
@@ -28,9 +29,10 @@
       <td class="direccion">{{direccion}}</td>
       <td class="provincia">{{provincia}}</td>
       <td class="fechaAlta">{{formatDate fechaAlta}}</td>
-  		<td><i id='editar'><i class='fas fa-edit fa-2x icono mr-2' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i></td>
-  		<td><i id='borrar'><i class='fas fa-trash-alt fa-2x icono ml-2 mr-2' style='color:red'></i></i></td>
-      <td><i id='mapa_icon'><i class='fas fa-map-marker-alt fa-2x icono ml-2' style='color:blue'></i></i></td>
+  		<td><i id='editar'><i class='fas fa-edit icono fa-lg' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i></td>
+  		<td><i id='borrar'><i class='fas fa-trash-alt icono fa-lg' style='color:red'></i></i></td>
+      <td><i id='mapa_icon'><i class='fas fa-map-marker-alt icono fa-lg' style='color:blue'></i></i></td>
+      <td><i id='vehiculo_icon'><i class='fas fa-car icono fa-lg' style='color:black'></i></i></td>
   	</tr> 
 
 	{{/each}}	 
@@ -52,9 +54,10 @@
             <p>{{formatDate fecha_nacimiento}}</p>
             <hr>
             <p>Fecha de alta: {{formatDate fechaAlta}}</p>
-            <i id='editar'><i class='fas fa-edit fa-2x icono mr-2' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i>
-            <i id='borrar'><i class='fas fa-trash-alt fa-2x icono ml-2 mr-2' style='color:red'></i></i>
-            <i id='mapa_icon'><i class='fas fa-map-marker-alt fa-2x icono ml-2' style='color:blue'></i></i>
+            <i id='editar'><i class='fas fa-edit icono fa-2x mr-4' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i>
+            <i id='borrar'><i class='fas fa-trash-alt icono fa-2x mr-4' style='color:red'></i></i>
+            <i id='mapa_icon'><i class='fas fa-map-marker-alt icono fa-2x mr-4' style='color:blue'></i></i>
+            <i id='vehiculo_icon'><i class='fas fa-car icono fa-2x' style='color:black'></i></i>
           </div>
         </div>
     </row>

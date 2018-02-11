@@ -3,7 +3,7 @@
 	 * Object represents table 'cliente'
 	 *
      	 * @author: http://phpdao.com
-     	 * @date: 2018-01-17 21:01	 
+     	 * @date: 2018-02-03 11:14	 
 	 */
 	class Cliente{
 		
@@ -13,6 +13,9 @@
 		var $sexo;
 		var $telefono;
 		var $fechaNacimiento;
+		var $direccion;
+		var $provincia;
+		var $fechaAlta;
 		
 	}
 ?>

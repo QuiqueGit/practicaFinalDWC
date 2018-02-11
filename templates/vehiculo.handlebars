@@ -1,0 +1,100 @@
+<div class="modal fade" id="modalVehiculo" tabindex="-1" role="dialog" aria-labelledby="modalVehiculoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Vehículos</h5><br>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div id="container contVehiculos">
+                    {{!-- Aquí va el listado de vehiculos del cliente (si tiene...) --}}
+                    {{#if noVehiculos}}
+                    	<h3>Sin vehiculos.</h3>
+                    {{else}}
+                    <div class="row cards d-flex justify-content-sm-center">
+
+                    	{{#each vehiculos}}
+	                        <div id="{{id}}" class="borde_vehiculo p-2 mr-1 border border-secondary">
+	                            <label>Tipo:</label><br>
+	                            <select class="custom-select selectorr" id="select_vehiculo_uptade{{id}}" disabled="">                        	
+	                                <option value="Coche" {{equals tipo "Coche"}}>Coche</option>
+	                                <option value="Moto" {{equals tipo "Moto"}}>Moto</option>
+	                                <option value="Camion" {{equals tipo "Camion"}}>Camión</option>
+	                                <option value="Furgoneta" {{equals tipo "Furgoneta"}}>Furgoneta</option>
+                       			</select><br>                       			
+	                            <label>Matricula:</label><br>
+	                            <input type="text" id="matricula_update{{id}}" value="{{matricula}}" disabled=""><br>
+	                            <label>Marca:</label><br>
+	                            <input type="text" id="marca_update{{id}}" value="{{marca}}" disabled=""><br>
+	                            <label>Modelo:</label><br>
+	                            <input type="text" id="modelo_update{{id}}" value="{{modelo}}" disabled=""><br>
+	                            <label>F.Fabricación:</label><br>
+	                            <input type="text" id="ffabricacion_update{{id}}" value="{{formatDate fechaFabricacion}}" disabled=""><br>
+	                            <input type="hidden" id="idCliente_update{{id}}" value="{{idCliente}}"><br>
+	                            <div class="row justify-content-around botones">
+		                            <button type="button" id="update_vehiculo" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+		                            <button type="button" id="aceptar_vehiculo" class="btn btn-info btn-sm invisible">Aceptar</button>
+		                            <button type="button" id="delete_vehiculo" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+	                        	</div>
+	                        </div>
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                </div>
+
+                <hr>
+
+                <div id="formVehiculo">
+                	<h3>Registrar un nuevo vehículo.</h3>
+                    <!--Formulario-->
+                    <form id="form_registro">
+                        <div class="form-group">
+                            <label>Tipo</label>
+                            <select class="custom-select col-lg-3" id="select_vehiculo">
+                                <option value="Coche" selected="">Coche</option>
+                                <option value="Moto">Moto</option>
+                                <option value="Camion">Camión</option>
+                                <option value="Furgoneta">Furgoneta</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Matrícula</label>
+                            <input type="text" class="form-control text-muted" id="matricula_input" value="">
+                        </div>
+                        <row class='no-gutters d-flex'>
+                            <div class="form-group col-6">
+                                <label>Marca</label>
+                                <input type="text" class="form-control text-muted" id="marca_input" value="">
+                            </div>
+                            <div class="form-group col-5 offset-1">
+                                <label>Modelo</label>
+                                <input type="text" class="form-control text-muted" id="modelo_input" value="">
+                            </div>
+                        </row>
+                        <div class="form-group">
+                            <label>FechaFabricación</label>
+                            <input type="text" class="form-control datepicker_vehiculo" value="">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-info" id="boton_nuevo_vehiculo" data-id='' data-dismiss="modal">Registrar Vehículo</button>
+                            {{#if noVehiculos}}                            
+                            	<input type="hidden" id="idCliente" value="{{vehiculos.idSinVehiculo}}"> 
+                            {{else}}
+                            	<input type="hidden" id="idCliente" value="{{vehiculos.[0].idCliente}}">                            	
+                            {{/if}}                          
+                        </div>
+                    </form>
+                    <!--FIN Formulario-->
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
