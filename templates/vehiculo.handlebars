@@ -3,7 +3,7 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title">Vehículos</h5><br>
+                <h5 class="modal-title">Vehículos</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -14,7 +14,7 @@
                 <div id="container contVehiculos">
                     {{!-- Aquí va el listado de vehiculos del cliente (si tiene...) --}}
                     {{#if noVehiculos}}
-                    	<h3>Sin vehiculos.</h3>
+                    	<h6 class="text-danger">Sin vehiculos.</h6>
                     {{else}}
                     <div class="row cards d-flex justify-content-sm-center">
 
@@ -38,13 +38,20 @@
 	                            <input type="hidden" id="idCliente_update{{id}}" value="{{idCliente}}"><br>
 	                            <div class="row justify-content-around botones">
 		                            <button type="button" id="update_vehiculo" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-		                            <button type="button" id="aceptar_vehiculo" class="btn btn-info btn-sm invisible">Aceptar</button>
+		                            <button type="button" id="aceptar_vehiculo" class="btn btn-success btn-sm invisible"><i class="fas fa-check"></i></button>
+                                    <button type="button" id="file_vehiculo" class="btn btn-secondary btn-sm" data-toggle="collapse" data-target="#divFicheros"><i class="fas fa-file-pdf"></i></button>
 		                            <button type="button" id="delete_vehiculo" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
 	                        	</div>
 	                        </div>
                         {{/each}}
+                        {{!-- FIN listado vehículos --}}
                     </div>
                     {{/if}}
+                    
+                    {{!-- div para ficheros --}}
+                    <div id="divFicheros" class="row collapse">
+                    {{!-- FIN div para ficheros --}}   
+                    </div>                    
                 </div>
 
                 <hr>

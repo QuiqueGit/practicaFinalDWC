@@ -39,7 +39,7 @@ var VehiculoView = (function() {
 
 		$('#modalVehiculo').modal('show');
 
-		/*EVENTOS EDITAR, ACEPTAR Y ELIMINAR VEHICULOS*/
+		/*EVENTOS EDITAR, ACEPTAR, ELIMINAR y FICHEROS de VEHICULOS*/
 		if (!array_vehiculos.idSinVehiculo) {
 
 			var cards = $('div.cards');
@@ -86,6 +86,14 @@ var VehiculoView = (function() {
 
 		            events.publish("deleteVehiculo",element.id);
 		        }	                            
+        	});
+
+        	/*FICHEROS del vehículo pulsado*/
+	        card.on("click","button#file_vehiculo", function(){
+
+	        	//le paso la id del vehiculo, para obtener los ficheros de ese vehiculo
+		        events.publish("getFicheros",element.id);
+		        	                            
         	});
 
 	    });

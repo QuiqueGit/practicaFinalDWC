@@ -3,7 +3,7 @@
  * Intreface DAO
  *
  * @author: http://phpdao.com
- * @date: 2018-02-03 11:14
+ * @date: 2018-02-10 13:13
  */
 interface ClienteDAO{
 

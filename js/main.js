@@ -7,6 +7,8 @@ $(document).ready(function() {
     MapaView.init();
     Vehiculo.init();
     VehiculoView.init();
+    Fichero.init();
+    FicheroView.init();
     ClienteList.consultarClientes();
 });
 

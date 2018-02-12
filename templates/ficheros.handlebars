@@ -1,0 +1,55 @@
+<div class="container contFicheros">
+    
+    <h3>Ficheros del vehiculo {{ficheros.[0].nombre}}</h3>
+    
+{{#if noFicheros}}
+    <h6 class="text-danger">Sin ficheros.</h6>
+{{else}}
+<div class="container cardsFicheros">
+
+    {{#each ficheros}}
+
+        <div id="{{id}}" class="row borde_fichero p-2 mr-1 border border-secondary rounded justify-content-around mb-2">
+
+            <label><b><u>Tipo Fichero:</u></b></label>
+            <label>{{tipoFichero}}</label>                                   
+            <label><b><u>Nombre:</u></b></label>
+            <label>{{nombre}}</label>
+            <button type="button" id="bajar_fichero" class="btn btn-success btn-sm"><i class="fas fa-download"></i></button>            
+            <button type="button" id="delete_fichero" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+            
+        </div>
+    {{/each}}
+    {{!-- FIN listado ficheros --}}
+</div>
+{{/if}}
+
+<hr>
+    
+    <h3>Subir nuevo fichero...</h3>
+
+    <form enctype="multipart/form-data" id="formUploadAjax" method="POST">
+        <label>Tipo Fichero:</label>
+        <select class="custom-select selectorr col-3" name="select_vehiculo_file" id="select_vehiculo_file">
+            <option value="Facturas" selected="">Facturas</option>
+            <option value="Contratos">Contratos</option>
+            <option value="Seguros">Seguros</option>                                
+        </select>
+        <br>Nombre: <input type="text" id="nombre" name="nombre" value="test">
+        <input  type="file" id="archivo1" name="archivo1"/> 
+        {{#if noFicheros}}                            
+            <input type="hidden" id="idVehiculo" value="{{ficheros.idSinFichero}}"> 
+        {{else}}
+            <input type="hidden" id="idVehiculo" value="{{ficheros.[0].idVehiculo}}">                                
+        {{/if}}       
+        <input type="submit" id="submit" value="Subir archivo">
+    </form>
+
+</div>
+
+
+
+
+
+
+
