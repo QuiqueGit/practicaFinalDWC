@@ -17,7 +17,9 @@ templates['ficheros'] = template({"1":function(container,depth0,helpers,partials
     + alias4(((helper = (helper = helpers.nombre || (depth0 != null ? depth0.nombre : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"nombre","hash":{},"data":data}) : helper)))
     + "</label>\r\n            </div>  \r\n            <div id=\""
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\">          \r\n                <button type=\"button\" id=\"bajar_fichero\" class=\"btn btn-success btn-sm\"><i class=\"fas fa-download\"></i></button>            \r\n                <button type=\"button\" id=\"delete_fichero\" class=\"btn btn-danger btn-sm\"><i class=\"fas fa-trash\"></i></button>\r\n            </div>\r\n            \r\n        </div>\r\n";
+    + "\">          \r\n                <a href=\""
+    + alias4(((helper = (helper = helpers.ruta || (depth0 != null ? depth0.ruta : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"ruta","hash":{},"data":data}) : helper)))
+    + "\" class=\"btn btn-success btn-sm\" download><i class=\"fas fa-download\"></i></a>            \r\n                <button type=\"button\" id=\"delete_fichero\" class=\"btn btn-danger btn-sm\"><i class=\"fas fa-trash\"></i></button>\r\n            </div>\r\n            \r\n        </div>\r\n";
 },"6":function(container,depth0,helpers,partials,data) {
     var stack1;
 

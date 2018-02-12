@@ -26,7 +26,7 @@
 			$fichero=new Fichero();	
 			$fichero->tipoFichero = htmlspecialchars(trim($_POST['tipoFichero']));
 			$fichero->nombre = $nombreFichero;
-			$fichero->ruta = $destino . $nombreFichero;
+			$fichero->ruta = "http://localhost/practicaFinalDWC/ficheros_subidos/" . $nombreFichero;
 			$fichero->idVehiculo = htmlspecialchars(trim($_POST['idVehiculo']));
 
 			//start new transaction
