@@ -32,12 +32,13 @@ var Fichero = (function() {
         url: url+"nuevoFichero.php",
         type: "post",
         data: datos, //datos que vienen del ficheroView, datos del form
+        dataType: "json",
         cache: false,
         contentType: false,
  		processData: false,
- 		success:function(e){
- 			console.log(e);
- 			//events.publish(""); 			
+ 		success:function(array_ficheros){
+
+ 			events.publish("renderFicheros", array_ficheros); 			
  		}
     })              
         

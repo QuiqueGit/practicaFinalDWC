@@ -7,19 +7,13 @@
 		//seteamos la url de destino para las fotos
 		$destino = "../ficheros_subidos/";
 		//seteamos el nombre del fichero
-		$nombreFichero = $_FILES["archivo1"]["name"];
+		$nombreFichero = $_POST['nombreFichero'] . $_FILES["archivo1"]["name"];
+
 		//ruta completa, url destino + nombre del fichero
 		$nombreCompleto = $destino . $nombreFichero;
 
 		//comprobamos si el directorio existe...
-		if (is_dir($destino)) {
-			
-			//asignamos un id único para cada foto, no pueden haber nombres iguales
-			//$idUnico = time();
-			//seteamos el nombre del fichero con el id único al principio
-			//$nombreFichero = $idUnico . "-" . $nombreFichero;
-			//ruta completa, url + nuevo nombre con id única
-			//$nombreCompleto = $destino.$nombreFichero;
+		if (is_dir($destino)) {		
 
 			//mover el fichero subido de la carpeta temporal, a la ruta seteada
 			move_uploaded_file($_FILES["archivo1"]["tmp_name"], $nombreCompleto);
@@ -31,8 +25,8 @@
 			//new fichero
 			$fichero=new Fichero();	
 			$fichero->tipoFichero = htmlspecialchars(trim($_POST['tipoFichero']));
-			$fichero->nombre = htmlspecialchars(trim($_POST['nombreFichero']));
-			$fichero->ruta = $destino . htmlspecialchars(trim($_POST['nombreFichero'])) . $nombreFichero;
+			$fichero->nombre = $nombreFichero;
+			$fichero->ruta = $destino . $nombreFichero;
 			$fichero->idVehiculo = htmlspecialchars(trim($_POST['idVehiculo']));
 
 			//start new transaction
@@ -45,7 +39,7 @@
 			$transaction->commit();
 
 			if ($id >0){
-				echo json_encode(array("id" => $id), JSON_FORCE_OBJECT);
+				require('consultaFicheros.php');
 			}else{
 				echo json_encode(array("error"=>"Nuevo:Se produjo un error. Intente más tarde"), JSON_FORCE_OBJECT);
 			}

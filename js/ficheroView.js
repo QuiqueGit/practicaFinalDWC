@@ -31,7 +31,7 @@ var FicheroView = (function() {
                     var con = confirm("¿Borrar fichero " + element.tipoFichero + " " + element.nombre + " ?");
 
                     if (con) {
-                        $(this).closest("div.borde_fichero").remove();
+                        $(this).closest("div.borde_fichero").remove();                        
 
                         events.publish("deleteFichero", element.id);
                     }
@@ -50,11 +50,13 @@ var FicheroView = (function() {
 })();
 
 //evento SUBMIT nuevo fichero en form vehiculo
-$(document).on("submit", "form#formUploadAjax", function(){
+$(document).on("submit", "form#formUploadAjax", function(e){
+
+    e.preventDefault(); //evita que recarge la página
 
     var idVehiculo = $("#idVehiculo").val();
     var tipoFichero = $("#select_vehiculo_file").val();
-    var nombreFichero = tipoFichero + "_vehiculo_" + idVehiculo + "_";
+    var nombreFichero = tipoFichero + "_vehID" + idVehiculo + "_" + Date.now();
 
     var formData = new FormData(document.getElementById("formUploadAjax"));
     //formData.append("dato", "valor");

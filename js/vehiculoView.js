@@ -82,7 +82,9 @@ var VehiculoView = (function() {
 	        	var con = confirm("¿Borrar "+element.tipo+" "+element.marca+ " - "+element.modelo+" ?");
 
 				if(con){					
-		        	$(this).closest("div.borde_vehiculo").remove();	   
+		        	$(this).closest("div.borde_vehiculo").remove();	
+
+		        	$("#divFicheros").collapse('hide');   
 
 		            events.publish("deleteVehiculo",element.id);
 		        }	                            
