@@ -21,7 +21,7 @@
   		<td class="sexo">{{sexo}}</td>
   		<td class="telefono">{{telefono}}</td>
   		<td class="fnac">{{formatDate fecha_nacimiento}}</td>
-  		<td><a id='editar' class="waves-effect waves-light modal-trigger" href="#clienteModal"><i class="small material-icons orange-text">mode edit</i></a></td>
+  		<td><a id='editar' class="waves-effect waves-light modal-trigger" href="#clienteModal"><i class="small material-icons orange-text">edit</i></a></td>
   		<td><i id='borrar' class="small material-icons icono red-text">delete</i></td>
       
   	</tr> 
@@ -33,22 +33,24 @@
 
 <!-- CARDS -->
 <div class="container hide-on-med-and-up">
+<div class='row'> 
+  {{#each this}}            
 
-  {{#each this}}
-
-    <row>    
-        <div class="card green lighten-4">
-          <div id="{{id}}" class="card-body center-align">
-            <h5>{{nombre}}</h5>
-            <p>{{ciudad}}</p>
-            <p>{{telefono}}</p>
-            <p>{{formatDate fecha_nacimiento}}</p>
-            <a id='editar' class="waves-effect waves-light modal-trigger" href="#clienteModal"><i class="small material-icons orange-text">mode edit</i></a>
-            <i id='borrar' class="small material-icons icono red-text">delete</i>
+    <div class="col s12">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{{nombre}}</span>
+              <p>{{ciudad}}</p>
+              <p>{{telefono}}</p>
+              <p>{{formatDate fecha_nacimiento}}</p>
+            </div>
+            <div id="{{id}}" class="card-action">
+              <a id="editar" class="waves-effect waves-light btn col s6 modal-trigger" href="#clienteModal"><i class="small material-icons">edit</i>Editar</a>
+              <a id="borrar" class="waves-effect waves-light btn col s6"><i class="small material-icons">delete</i>Borrar</a>
+            </div>
           </div>
         </div>
-    </row>
 
   {{/each}}
-
+  </div>
 </div>

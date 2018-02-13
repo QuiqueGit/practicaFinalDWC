@@ -28,14 +28,13 @@ var ClienteView = (function () {
 		var parametros;
 
 		cliente.id != 0 ?
-		parametros = {sexo:male, titulo:"Editar datos", accion: "Editar", cliente: cliente}: parametros = {titulo:"Nuevo Cliente", accion: "Registrar", cliente: cliente}		
+		parametros = {sexo:male, titulo:"Editar datos", accion: "Editar", cliente: cliente}: parametros = {titulo:"Nuevo Cliente", accion: "Añadir", cliente: cliente}		
 
 		var modalNuevoCompiled = Handlebars.templates.modal(parametros);
 
 		$('div.divModal').html(modalNuevoCompiled);
 
 		$('#datepicker').datepicker({dateFormat: 'yy-mm-dd', changeYear: true, changeMonth: true, yearRange: "1940:2000"});
-
 		
 	}
 
@@ -53,7 +52,7 @@ ClienteView.init();
 //***EVENTOS***//
 
 //evento click botón REGISTRAR en Modal Nuevo Cliente, con id='boton_Registrar'
-$("div.divModal").on('click', 'button#boton_Registrar', function(){	
+$("div.divModal").on('click', 'button#boton_Añadir', function(){	
 
 	//comprobar si los input tienen valor, no puede haber ninguno vacío
 	if ($('#nombre_input').val() && $('#ciudad_input').val() && $('#telefono_input').val() && $('#datepicker').val()){

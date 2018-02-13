@@ -6,49 +6,58 @@
 
     <!--Formulario-->
     <form id="form_registro">
-        <div class="form-group">
-            <label>Nombre</label>
-            <input type="text" class="form-control" id="nombre_input" value="{{cliente.nombre}}" required>
+        <div class="input-field">
+            <label for="nombre_input">Nombre</label>
+            <input type="text" class="validate" id="nombre_input" value="{{cliente.nombre}}" required>
         </div>
-        <div class="form-group">
-            <label>Ciudad</label>
-            <input type="text" class="form-control text-muted" id="ciudad_input" value="{{cliente.ciudad}}" required>
+        <div class="input-field">
+            <label for="ciudad_input">Ciudad</label>
+            <input type="text" class="validate" id="ciudad_input" value="{{cliente.ciudad}}" required>
         </div>
-        <div class="form-group">
-            <small>Sexo</small>
+        <div>
+            <span>Sexo</span>
             <br>
-            
+
             {{#if sexo}}
-                            
+
+            <div>            
+                <input type="radio" class="with-gap" name="sexo" id="hombre" value="H" checked>
                 <label for="hombre">Hombre</label>
-                <input type="radio" name="sexo" id="hombre" value="H" checked>
-                <br>           
+            </div>
+                          
+            <div>
+                <input type="radio" class="with-gap" name="sexo" id="mujer" value="M">
                 <label for="mujer">Mujer</label>
-                <input type="radio" name="sexo" id="mujer" value="M">
+            </div>
                 
             {{else}}                
+            <div>            
+                <input type="radio" class="with-gap" name="sexo" id="hombre" value="H">
                 <label for="hombre">Hombre</label>
-                <input type="radio" name="sexo" id="hombre" value="H">                
-                <br>
+            </div>
+                          
+            <div>
+                <input type="radio" class="with-gap" name="sexo" id="mujer" value="M" checked>
                 <label for="mujer">Mujer</label>
-                <input type="radio" name="sexo" id="mujer" value="M" checked>                                        
+            </div>                                        
             {{/if}} 
             
             <br>
         </div>
-        <div class="form-group">
-            <label>Teléfono</label>
-            <input type="text" class="form-control" id="telefono_input" value="{{cliente.telefono}}" required>
+        <div class="input-field">
+            <label for="telefono_input">Teléfono</label>
+            <input type="text" class="validate" id="telefono_input" value="{{cliente.telefono}}" required>
         </div>
-        <div class="form-group">
-            <label>FechaNacimiento</label>
-            <input type="text" id="datepicker" class="form-control" value="{{cliente.fecha_nacimiento}}" required>
+        <div class="datepicker">
+            <label for="nombre_input">FechaNacimiento</label>
+            <input type="text" id="datepicker"  value="{{cliente.fecha_nacimiento}}" required>
         </div>
-        <div class="form-group">
-            <a href="#!" class="modal-action modal-close waves-effect waves-red btn red lighten-2">Cancelar</a>
-            <button type="button" class="btn" id="boton_{{accion}}" data-id='{{cliente.id}}' data-dismiss="modal">{{accion}}</button>
+        <div class="input-field">            
+            <button type="button" class="modal-action modal-close btn" id="boton_{{accion}}" data-id='{{cliente.id}}' data-dismiss="modal">{{accion}}</button>
+            <a href="#!" class="modal-action modal-close waves-effect waves-red btn red lighten-2">Cancel</a>
         </div>
     </form>
     
 </div>
 
+<script type="text/javascript">Materialize.updateTextFields()</script>
