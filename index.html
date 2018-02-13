@@ -7,12 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- jQueryUI -->
 	<link rel="stylesheet" href="lib/jquery-ui-1.12.1/jquery-ui.css">
-	<!-- CSS BOOTSTRAP 4 BETA-->
-	<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- CSS MATERIALIZE-->
+	<link rel="stylesheet" href="css/materialize.css">
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
-	<!-- FONT AWESOME 5.0 -->
-	<script type="text/javascript" src="lib/fontawesome-all.js"></script>
+	<!-- Materialize ICONS -->	
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- HANDLEBARS JS -->
 	<script type="text/javascript" src="lib/handlebars.runtime-v4.0.11.js"></script>
 	<script type="text/javascript" src="js/clienteListCompiled.js"></script>
@@ -21,14 +20,16 @@
 <body>
 	<div class="container"></div>
 
-		<h1 class="display-4 text-center">Gestión tabla Clientes</h1>		
+		<h1 class="thin center-align">Gestión Clientes</h1>		
 		<!-- div para el modal -->
-		<div class="divModal"></div>
+		<div id="clienteModal" class="modal divModal"></div>
 		
 		<!-- div para la tabla + boton nuevo -->
 		<div class="container tabla">
-			
-			<i id='nuevo'><i class='fas fa-plus-circle fa-2x icono' data-toggle='modal' data-target='#clienteModal' style='color:green'></i></i>
+
+		<a id='nuevo' class="waves-effect waves-circle waves-light btn-floating modal-trigger" href="#clienteModal"><i class="material-icons">add</i></a>		
+          
+		
 			<!-- div para la tabla -->
 			<div class="content mt-3"></div>
 
@@ -36,11 +37,10 @@
 
 	</div>
 
-
 	<!-- SCRIPTS jQuery, Bootstrap4 -->
 	<script type="text/javascript" src="lib/jquery_3.3.1.js"></script>
 	<script type="text/javascript" src="lib/jquery-ui-1.12.1/jquery-ui.js"></script>
-	<script type="text/javascript" src="lib/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="lib/materialize.js"></script>
 
 	<script type="text/javascript" src="js/pubsub.js"></script>	
 	<script type="text/javascript" src="js/main.js"></script>

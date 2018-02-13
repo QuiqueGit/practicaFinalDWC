@@ -35,6 +35,8 @@ var ClienteView = (function () {
 		$('div.divModal').html(modalNuevoCompiled);
 
 		$('#datepicker').datepicker({dateFormat: 'yy-mm-dd', changeYear: true, changeMonth: true, yearRange: "1940:2000"});
+
+		
 	}
 
 	return {

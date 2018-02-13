@@ -1,3 +1,7 @@
+$(document).ready(function(){
+	$('#clienteModal').modal();
+});
+
 //URL de la API
 var App = (function() {
 

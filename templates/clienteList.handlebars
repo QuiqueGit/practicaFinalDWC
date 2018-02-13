@@ -1,12 +1,12 @@
 <!-- TABLA -->
-<table id="tabla" class="table table-hover mt-2 d-none d-lg-table">
+<table id="tabla" class="bordered striped hide-on-small-only">
   <thead>
     <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Ciudad</th>
-      <th scope="col">Sexo</th>
-      <th scope="col">Teléfono</th>
-      <th scope="col">FechaNacimiento</th>
+      <th>Nombre</th>
+      <th>Ciudad</th>
+      <th>Sexo</th>
+      <th>Teléfono</th>
+      <th>FechaNacimiento</th>
       <th></th>
       <th></th>
     </tr>
@@ -21,8 +21,9 @@
   		<td class="sexo">{{sexo}}</td>
   		<td class="telefono">{{telefono}}</td>
   		<td class="fnac">{{formatDate fecha_nacimiento}}</td>
-  		<td><i id='editar'><i class='fas fa-edit fa-2x icono mr-2' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i></td>
-  		<td><i id='borrar'><i class='fas fa-trash-alt fa-2x icono ml-2' style='color:red'></i></i></td>
+  		<td><a id='editar' class="waves-effect waves-light modal-trigger" href="#clienteModal"><i class="small material-icons orange-text">mode edit</i></a></td>
+  		<td><i id='borrar' class="small material-icons icono red-text">delete</i></td>
+      
   	</tr> 
 
 	{{/each}}	 
@@ -31,19 +32,19 @@
 </table>
 
 <!-- CARDS -->
-<div class="container d-lg-none">
+<div class="container hide-on-med-and-up">
 
   {{#each this}}
 
     <row>    
-        <div class="col-12 container card mb-2">
-          <div id="{{id}}" class="card-body text-center">
+        <div class="card green lighten-4">
+          <div id="{{id}}" class="card-body center-align">
             <h5>{{nombre}}</h5>
             <p>{{ciudad}}</p>
             <p>{{telefono}}</p>
             <p>{{formatDate fecha_nacimiento}}</p>
-            <i id='editar'><i class='fas fa-edit fa-2x icono mr-2' data-toggle='modal' data-target='#clienteModal' style='color:orange'></i></i>
-            <i id='borrar'><i class='fas fa-trash-alt fa-2x icono ml-2' style='color:red'></i></i>
+            <a id='editar' class="waves-effect waves-light modal-trigger" href="#clienteModal"><i class="small material-icons orange-text">mode edit</i></a>
+            <i id='borrar' class="small material-icons icono red-text">delete</i>
           </div>
         </div>
     </row>

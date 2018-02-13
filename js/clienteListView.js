@@ -43,7 +43,7 @@ ClienteList.consultarClientes();
 //***EVENTOS***//
 
 //evento icono de AÑADIR cliente
-$("i#nuevo").click(function(){
+$("#nuevo").click(function(){
 
 	var clienteVacio = {id:"",nombre:"",ciudad:"",sexo:"",telefono:"",fecha_nacimiento:""}
 
@@ -51,7 +51,7 @@ $("i#nuevo").click(function(){
 });
 
 //evento icono EDITAR en Tabla Clientes
-$("div.content").on('click','i#editar', function(){
+$("div.content").on('click','#editar', function(){
 
 	if($("#tabla").is(":visible")) {
 		//Si la tabla es visible, el this es el icono en la tabla
@@ -99,7 +99,7 @@ $("div.content").on('click','i#editar', function(){
 });
 
 //evento click icono ELIMINAR en Tabla Clientes
-$("div.content").on('click','i#borrar',function(){
+$("div.content").on('click','#borrar',function(){
 
 	var id;
 
